@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use A\Models\User;
+use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -53,14 +53,18 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+            'captcha' => ['required', 'captcha'],
+        ],[
+            'captcha.required' => '驗證碼不能為空',
+            'captcha.captcha' => '請輸入正確的驗證碼',
+        ] );
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \A\Models\User
+     * @return \App\Models\User
      */
     protected function create(array $data)
     {
@@ -69,17 +73,5 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-    }
-
-    protected function validator(array $data){
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
-            'captcha' => ['required', 'captcha'],
-        ], [
-            'captcha.required' => '驗證碼不能為空',
-            'captcha.captcha' => '請輸入正確的驗證碼',
-        ]);
-    }
+    }    
 }
