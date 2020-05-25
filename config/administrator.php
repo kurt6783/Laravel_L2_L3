@@ -1,5 +1,4 @@
 <?php
-
 return array(
 
     // 后台的 URI 入口
@@ -39,6 +38,8 @@ return array(
     'menu' => [
         '用户与权限' => [
             'users',
+            'roles',
+            'permissions',
         ],
     ],
 
