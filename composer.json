@@ -23,9 +23,7 @@
         "spatie/laravel-permission": "~3.0",
         "summerblue/administrator": "6.*",
         "summerblue/laravel-active": "6.*",
-        "viacreative/sudo-su": "~1.1"
-    },
-    "require-dev": {
+        "viacreative/sudo-su": "~1.1",
         "barryvdh/laravel-debugbar": "~3.2",
         "facade/ignition": "^1.4",
         "fzaninotto/faker": "^1.9.1",
@@ -34,6 +32,8 @@
         "nunomaduro/collision": "^3.0",
         "phpunit/phpunit": "^8.0",
         "summerblue/generator": "6.*"
+    },
+    "require-dev": {
     },
     "config": {
         "optimize-autoloader": true,
