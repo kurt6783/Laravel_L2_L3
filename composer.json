@@ -35,6 +35,7 @@
         "summerblue/administrator": "6.*",
         "summerblue/generator": "6.*",
         "summerblue/laravel-active": "6.*",
+        "tymon/jwt-auth": "1.0.0-rc.5",
         "viacreative/sudo-su": "~1.1"
     },
     "require-dev": {
